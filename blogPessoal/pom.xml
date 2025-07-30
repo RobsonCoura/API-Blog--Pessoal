@@ -30,26 +30,31 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
+		<!-- Dependência para integração com Spring Data JPA, facilitando o uso de repositórios e persistência com banco de dados relacionais -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+		<!-- Dependência para desenvolvimento de aplicações web RESTful com Spring Boot, incluindo servidor embutido -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		<!-- Dependência para habilitar ferramentas de desenvolvimento, como reload automático e hot swapping -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+		<!-- Driver JDBC para conexão com banco de dados MySQL em tempo de execução -->
 		<dependency>
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+
+		<!-- Dependência para frameworks de teste, como JUnit e Mockito, usada somente na fase de testes -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
