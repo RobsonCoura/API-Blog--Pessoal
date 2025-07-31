@@ -49,4 +49,10 @@ public class PostagemController {
     public ResponseEntity<Postagem> put(@RequestBody Postagem postagem){
         return ResponseEntity.status(HttpStatus.OK).body(repository.save(postagem));
     }
+
+    //Método para deletar uma postagem pelo seu ID
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable long id){
+        repository.deleteById(id);
+    }
 }
