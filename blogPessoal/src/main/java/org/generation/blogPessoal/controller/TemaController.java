@@ -4,10 +4,7 @@ import org.generation.blogPessoal.model.Tema;
 import org.generation.blogPessoal.repository.TemaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,8 +17,16 @@ public class TemaController {
     @Autowired
     private TemaRepository repository;
 
+    //Método para buscar por todos os temas
     @GetMapping
     public ResponseEntity<List<Tema>> getAll(){
         return ResponseEntity.ok(repository.findAll());
+    }
+
+    //Método para buscar por um tema pelo seu ID
+    @GetMapping("/{id}")
+    public ResponseEntity<Tema> getById(@PathVariable long id){
+        return repository.findById(id).map(resp -> ResponseEntity.ok(resp))
+                .orElse(ResponseEntity.notFound().build());
     }
 }
