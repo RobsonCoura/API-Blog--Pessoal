@@ -67,6 +67,17 @@
 			<artifactId>jakarta.validation-api</artifactId>
 		</dependency>
 
+		<!-- Dependência para habilitar autenticação e segurança via Spring Security -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<!-- Biblioteca utilitária da Apache para codificação e decodificação (ex: Base64, MD5, SHA) -->
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+		</dependency>
 
 		<!-- Dependência para frameworks de teste, como JUnit e Mockito, usada somente na fase de testes -->
 		<dependency>
