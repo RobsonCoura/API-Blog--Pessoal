@@ -42,4 +42,10 @@ public class TemaController {
     public ResponseEntity<Tema> post(@RequestBody Tema tema){
         return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(tema));
     }
+
+    //Método para cadastrar um Tema
+    @PutMapping
+    public ResponseEntity<Tema> put(@RequestBody Tema tema){
+        return ResponseEntity.status(HttpStatus.OK).body(repository.save(tema));
+    }
 }
