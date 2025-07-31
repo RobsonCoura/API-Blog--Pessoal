@@ -3,6 +3,7 @@ package org.generation.blogPessoal.controller;
 import org.generation.blogPessoal.model.Tema;
 import org.generation.blogPessoal.repository.TemaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,5 +35,11 @@ public class TemaController {
     @GetMapping("/nome/{nome}")
     public ResponseEntity<List<Tema>> getByName(@PathVariable String nome){
         return ResponseEntity.ok(repository.findAllByDescricaoContainingIgnoreCase(nome));
+    }
+
+    //Método para cadastrar um Tema
+    @PostMapping
+    public ResponseEntity<Tema> post(@RequestBody Tema tema){
+        return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(tema));
     }
 }
