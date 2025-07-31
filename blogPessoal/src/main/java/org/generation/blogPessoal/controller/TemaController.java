@@ -43,9 +43,16 @@ public class TemaController {
         return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(tema));
     }
 
-    //Método para cadastrar um Tema
+    //Método para atualizar um Tema pelo seu ID
     @PutMapping
     public ResponseEntity<Tema> put(@RequestBody Tema tema){
         return ResponseEntity.status(HttpStatus.OK).body(repository.save(tema));
     }
+
+    //Método para deletar um Tema pelo seu ID
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable long id){
+       repository.deleteById(id);
+    }
+
 }
